@@ -19,3 +19,7 @@ For Molokai theme working download Molokai color scheme:
 * `mkdir colors` (if not exists)
 * `cd colors`
 * `wget https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim`
+
+### Shortcuts ###
+CTRL + j inserts a blank line below the current line.
+CTRL + k inserts a blank line above the current line.
