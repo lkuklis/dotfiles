@@ -9,6 +9,8 @@
 * Link .vimrc from repository to home directory
 
   * `ln -s ~/dotfiles/.vimrc ~/.vimrc`
+### Map leader
+Set to `,`
 
 ### Install themes
 Go to Vim and type: `:PluginInstall` to install all included in .vimrc plugins.
