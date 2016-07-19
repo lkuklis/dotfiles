@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+let mapleader=","
 
+syntax on
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set report=0 " Show all changes.
 set mouse=a " Enable mouse in all modes.
@@ -8,10 +10,10 @@ set shortmess+=I " Hide intro menu.
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-" VISUAL          
+" VISUAL
 set cursorline " Highlight current line
 set number " Show line numbers.
-set showtabline=2 " Put bar on top of screen 
+set showtabline=2 " Put bar on top of screen
 set title " Filename in the window titlebar.
 set nowrap " nowrap lines.
 set noshowmode " Removes current mode text. Plugin airline.vim shows his own toolbar with stats
@@ -40,7 +42,7 @@ set ignorecase " Ignore case of searches.
 set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
 
 " PLUGIN CONFIGURATION
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s '
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -58,7 +60,20 @@ Plugin 'L9'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" SHORTCUTS
+
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" Trim extra whitespace
+function! StripExtraWhiteSpace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+noremap <leader>ss :call StripExtraWhiteSpace()<CR>
