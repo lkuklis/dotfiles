@@ -9,6 +9,7 @@
 * Link .vimrc from repository to home directory
 
   * `ln -s ~/dotfiles/.vimrc ~/.vimrc`
+
 ### Map leader
 Set to `,`
 
