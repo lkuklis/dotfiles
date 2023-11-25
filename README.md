@@ -1,4 +1,4 @@
-# My dotfiles
+# dotfiles
 
 ## VIM
 
@@ -10,19 +10,21 @@
 
   * `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 
-### Map leader
-Set to `,`
 
-### Install themes
+### Install plugins
 Go to Vim and type: `:PluginInstall` to install all included in .vimrc plugins.
 
 ### Color scheme
-For Molokai theme working download Molokai color scheme: 
-* `cd ~\.vim\`
-* `mkdir colors` (if not exists)
-* `cd colors`
-* `wget https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim`
 
-### Shortcuts ###
+Settings contains schema for Molokai theme. Download Molokai color scheme: 
+* ```
+
+    mkdir -p ~\.vim\colors` (if not exists)
+    cd colors
+    wget https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+```
+
+### Shortcuts
+
 CTRL + j inserts a blank line below the current line.
 CTRL + k inserts a blank line above the current line.
